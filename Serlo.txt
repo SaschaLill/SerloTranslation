@@ -1,0 +1,190 @@
+{{#invoke:Mathe für Nicht-Freaks/Seite|oben}}
+
+In diesem Kapitel behandeln wir die beiden trigonometrischen functions ''Sinus'' and ''Kosinus''. Sie bilden die wichtigsten trigonometrischen functions and werden unter anderem in der Geometrie für Dreiecksberechnungen sowie der Trigonometrie benötigt. Wellen wie elektromagnetische Wellen sowie harmonische Schwingungen lassen sich über Sinus- beziehungsweise cosine functionen beschreiben, sodass diese in der Physik allgegenwärtig sind.
+
+== Definition über Einheitskreis ==
+Es gibt mehrere Möglichkeiten, den Sinus and den Kosinus zu definieren. Aus der Schule wird dir möglicherweise schon die Definition vom Sinus and Kosinus am Einheitskreis bekannt sein. Dabei wird ein Punkt <math>P(x,y)</math> betrachtet, der sich auf einem Kreis um den Ursprung with Radius <math>r = 1</math> befindet. Die <math>x</math>-Achse schließt with der Strecke vom Nullpunkt zu <math>P(x,y)</math> den Winkel <math>\theta</math> ein:
+
+[[File:Sinus and Kosinus am Einheitskreis 2.svg|center|250px|Der Punkt P auf dem Einheitskreis with den Koordinaten (x,y)]]
+
+Der Winkel <math>\theta</math> legt eindeutig fest, wo sich der Punkt <math>P(x,y)</math> befindet. Damit kann die <math>x</math>-Koordinate and die <math>y</math>-Koordinate jeweils durch eine von <math>\theta</math> abhängige function beschrieben werden. Diese functions <math>x(\theta)</math> and <math>y(\theta)</math> nennen wir die sine function <math>\cos(\theta)</math> beziehungsweise <math>\sin(\theta)</math>:
+
+[[File:Sinus and Kosinus am Einheitskreis 1.svg|center|250px|Die Sinus and cosine function am Einheitskreis]]
+
+Im sequencesden nehmen wir <math>x</math> als Winkel and schreiben <math>\sin(x)</math> anstelle von <math>\sin(\theta)</math> beziehungsweise <math>\cos(x)</math> anstatt <math>\cos(\theta)</math>. Damit ergibt sich folgende Definition:
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=Definition Sinus and Kosinus am Einheitskreis
+ |definition=
+Let <math>P</math> der Punkt auf dem Einheitskreis, dessen Ortsvektor with der horizontalen Koordinatenachse den Winkel <math>x</math> einschließt. Die Koordinaten von <math>P</math> sind dann <math>(\cos(x),\sin(x))</math>. Dabei nennt man <math>\cos(x)</math> den Kosinus von <math>x</math> and <math>\sin(x)</math> den Sinus von <math>x</math>.
+}}
+
+== Graph der Sinus and cosine function ==
+
+Die folgende Animation zeigt, wie die Graphen der Sinus- beziehungsweise cosine function schrittweise konstruiert werden:
+
+[[File:Mfnf-sincos.gif|center|Animation zur Definition des Sinus and des Kosinus am Einheitskreis]]
+
+Damit ergibt sich folgender Graph für die sine function:
+
+[[Datei:Sine.svg|center|500px|Graph der sine function]]
+
+For die cosine function erhalten wir:
+
+[[Datei:Cosine.svg|center|500px|Graph der cosine function]]
+
+== Definition über exponential function ==
+=== Darstellung über complex exponential function ===
+Die Sinus- and cosine function kann auch als Summe von gewissen complex exponential functionen definiert werden. Mit dieser Darstellung können besonders elegant Eigenschaften vom Sinus and Kosinus nachgewiesen werden. 
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=Sinus and Kosinus über complex exponential function
+ |definition=
+Wir definieren the functions <math>\sin</math> (Sinus) and <math>\cos</math> (Kosinus) durch
+
+{{Formel|<math>\begin{align}
+& \sin:\R\to\R: x\mapsto \frac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right) \\[0.3em]
+& \cos:\R\to\R: x\mapsto \frac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)
+\end{align}</math>}}
+}}
+
+Diese functions sind wohldefiniert: For every  real number <math>x</math> ist die complex number <math>\mathrm{e}^{-\mathrm ix}</math> die komplex Konjugierte von <math>\mathrm{e}^{\mathrm ix}</math>. Damit ist <math>\mathrm{e}^{ix}+\mathrm{e}^{-ix}</math> eine real number and es there is <math>\cos(x)=\tfrac{1}{2}\left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)\in\R</math>. Auf analoge Art kann man zeigen, dass <math>\sin(x)=\tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)\in\R</math> ist.
+
+=== Herleitung der Exponentialdefinition ===
+Man kann zeigen, dass <math>e^{\mathrm i\theta}</math> der Punkt auf dem Einheitskreis ist, dessen Ortsvektor with der <math>x</math>-Achse den Winkel <math>\theta</math> einschließt:
+
+[[File:Sinus and Kosinus am Einheitskreis 3.svg|center|250px|e^(i?) im Einheitskreis]]
+
+Der real part der complex number <math>e^{\mathrm i\theta}</math> ist damit <math>\cos(\theta)</math>, and der imaginary part ist <math>\sin(\theta)</math>. There is also <math>e^{\mathrm i\theta} = \cos(\theta)+\sin(\theta)\mathrm i</math>. Bei <math>e^{-\mathrm i\theta}</math> betrachten wir den Winkel <math>-\theta</math>. Der Punkt <math>e^{-\mathrm i\theta}</math> liegt gespiegelt an der reellen Achse auf der anderen Seite:
+
+[[File:Sinus and Kosinus am Einheitskreis 4.svg|center|250px|e^(-i?) im Einheitskreis]]
+
+Damit ist der real part von <math>e^{-\mathrm i\theta}</math> derselbe wie bei <math>e^{\mathrm i\theta}</math>, also <math>\cos(\theta)</math>. Jedoch ist der imaginary part gegenüber <math>e^{\mathrm i\theta}</math> um die number <math>-1</math> multipliziert and damit gleich <math>-\sin(\theta)</math>. Wir erhalten <math>e^{-\mathrm i\theta} = \cos(\theta)-\sin(\theta)\mathrm i</math>. Also haben wir:
+
+{{Formel|<math>\begin{align}
+e^{\mathrm i\theta} & = \cos(\theta)+\sin(\theta)\mathrm i \\[0.3em]
+e^{-\mathrm i\theta} & = \cos(\theta)-\sin(\theta)\mathrm i
+\end{align}</math>}}
+
+Durch Addition beider Gleichungen erhalten wir:
+
+{{Formel|<math>e^{\mathrm i\theta} + e^{-\mathrm i\theta} = 2\cos(\theta) \implies \cos(\theta) = \frac 12\left(e^{\mathrm i\theta} + e^{-\mathrm i\theta}\right)</math>}}
+
+Und durch Subtraktion der beiden Gleichungen ergibt sich:
+
+{{Formel|<math>e^{\mathrm i\theta} - e^{-\mathrm i\theta} = 2\sin(\theta)\mathrm i \implies \sin(\theta) = \frac{1}{2\mathrm i}\left(e^{\mathrm i\theta} - e^{-\mathrm i\theta}\right)</math>}}
+
+Damit haben wir die beiden Definitionen <math>\sin(x) = \tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)</math> and <math>\cos(x) = \tfrac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)</math> hergeleitet. Diese Herleitung ist noch einmal in folgender Grafik illustriert:
+
+[[Datei:Sine Cosine Exponential qtl1.svg|center|300px|Herleitung der complex Exponentialdarstellung des Sinus and Kosinus]]
+
+== Reihendarstellung vom Sinus and Kosinus ==
+=== Definition als Reihe === 
+[[File:Sine.gif|thumb|Diese Animation illustriert die Definition der sine function durch eine Reihe. Je höher die number <math>N</math> ist, desto mehr Summanden werden in der Reihendefinition verwendet. So ist bei <math>N=2</math> neben der sine function zusätzlich das kubische Polynom <math>\sum_{k=0}^{2-1} \tfrac{(-1)^k}{(2k+1)!}x^{2k+1} = x - \tfrac{x^3}{6}</math> eingezeichnet.]]
+In der Vorlesung wird oft eine andere Definition bevorzugt, nämlich die sogenannte ''Reihendarstellung'', bei der der Sinus and Kosinus über eine Reihe definiert wird. Die Reihendarstellung ist zwar weniger anschaulich als die Definition über dem Einheitskreis, with ihr können aber einige Eigenschaften des Sinus and Kosinus leichter bewiesen werden. Außerdem kann with ihr der Sinus and Kosinus auf complex numbers erweitert werden.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=Sinus and Kosinus
+ |definition=
+Wir definieren the functions <math>\sin</math> (Sinus) and <math>\cos</math> (Kosinus) durch
+
+{{Formel|<math>\begin{align}
+& \sin:\R\to\R, x\mapsto \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} \\[0.3em]
+& \cos:\R\to\R, x\mapsto \sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k}
+\end{align}</math>}}}}
+
+=== Wohldefiniertheit der Reihendarstellung ===
+Wir müssen nachweisen, dass unsere Reihendarstellung der Sinus- and cosine function wohldefiniert ist. Sprich: Wir müssen zeigen, dass for all <math>x \in \R</math> die Reihen <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> beziehungsweise <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math> gegen eine real number konvergieren.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Satz
+ |satz=
+For alle real numbers <math>x</math> konvergieren die Reihen <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> and <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math>.
+
+ |beweis=
+Wir beweisen den theorem für die Reihe <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> der sine function. Der Beweis für die Reihe der cosine function kann analog geführt werden. For <math> x = 0</math> finden wir zunächst:
+
+{{Formel|<math>\begin{align}
+& \sum_{k=0}^{\infty}{\frac{(-1)^k}{(2k+1)!} x^{2k+1}} \\[0.3em]
+&\ {\color{OliveGreen} \left\downarrow\ x=0 \right.} \\[0.3em]
+=\ & \sum_{k=0}^{\infty}{\frac{(-1)^k}{(2k+1)!}0^{2k+1}} \\[0.3em]
+=\ & \sum_{k=0}^{\infty}{0} = 0
+\end{align}</math>}}
+
+For <math> x = 0</math> konvergiert die Reihe demnach. For <math> x \neq 0</math> wenden wir das [[Mathe für Nicht-Freaks: Quotientenkriterium|Quotientenkriterium]] an. Let hierzu <math>a_k:=\tfrac{(-1)^k}{(2k+1)!} x^{2k+1}</math> for all <math>k\in\N_0</math>, so dass wir <math>\sum_{k=0}^{\infty}{\tfrac{(-1)^k}{(2k+1)!} x^{2k+1}}=\sum_{k=0}^{\infty}{a_k}</math> haben. There is:
+
+{{Formel|<math>\begin{align}
+& \lim_{k\to\infty}{\left|\frac{a_{k+1}}{a_k}\right|} \\[0.3em] 
+=\ & \lim_{k\to\infty}{\left|-\frac{ x^{2(k+1)+1}\cdot (2k+1)!}{ x^{2k+1}\cdot (2(k+1)+1)!}\right|} \\[0.3em]
+=\ & \lim_{k\to\infty}{\left|-\frac{ x^{2k+3}\cdot (2k+1)!}{ x^{2k+1}\cdot (2k+3)!}\right|} \\[0.3em]
+=\ & \lim_{k\to\infty}{\left|\frac{x^2}{(2k+2)(2k+3)}\right|} = 0
+\end{align}</math>}}
+
+Wegen <math>\lim_{k\to\infty}{\left|\tfrac{a_{k+1}}{a_k}\right|}=0</math> konvergiert die Reihe nach dem Quotientenkriterium.
+}}
+
+== Äquivalenz der Exponential- and Reihendarstellung ==
+Wir haben mehrere Definitionen der Sinus- and cosine function kennen gelernt. Einen Zusammenhang zwischen der Exponentialdarstellung and der Definition am Einheitskreis haben wir bereits hergestellt. Nun müssen wir noch zeigen, dass die Exponential- and die Reihendarstellung äquivalent zueinander sind.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Satz
+ |satz=
+There is for all <math>x \in \R</math>: 
+
+{{Formel|<math>\begin{align}
+\sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} &= \frac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right) \\[0.5em]
+\sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k} &= \frac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)
+\end{align}</math>}}
+
+Damit ist es egal, ob die Sinus- bzw. cosine function über ihre Reihendarstellung oder über ihre Exponentialdarstellung definiert wird.
+
+ |beweis=
+Wir wissen bereits vom Kapitel über die [[Mathe_für_Nicht-Freaks:_Herleitung_und_Definition_der_exponential function|exponential function]], dass die exponential function die Reihendarstellung <math>\exp(x) = \sum_{k=0}^{\infty}{\tfrac{x^k}{k!}}</math> hat. Wenn wir nun <math>\mathrm{i}\tilde x</math> for <math>x</math> in die Reihendarstellung einsetzen, erhalten wir: 
+
+{{Formel|<math>\begin{align}
+\mathrm{e}^{\mathrm{i}\tilde x} &= \sum^{\infty}_{k=0}\frac{(\mathrm{i}\tilde x)^k}{k!}\\[0.5em]
+&\ {\color{OliveGreen} \left\downarrow\ \text{absolute Konvergenz}\implies\text{Reihe aufspalten} \right.} \\[0.5em]
+& = \sum^{\infty}_{l=0}\frac{(\mathrm{i}\tilde x)^{2l}}{(2l)!} + \sum^{\infty}_{l=0}\frac{(\mathrm{i}\tilde x)^{2l+1}}{(2l+1)!}\\[0.5em]
+&\ {\color{OliveGreen} \left\downarrow\ \mathrm{i}^{2l} = (-1)^l \text{und } \mathrm{i}^{2l+1} = \mathrm{i}\cdot (-1)^l \right.} \\[0.5em]
+& = \sum_{l=0}^\infty \frac{(-1)^l}{(2l)!}\tilde x^{2l} + \mathrm{i} \sum_{l=0}^\infty \frac{(-1)^l}{(2l+1)!}\tilde x^{2l+1}
+\end{align}</math>}}
+
+Nun setzen wir <math>-\mathrm{i}\tilde x</math> in die Reihendarstellung der exponential function ein:
+
+{{Formel|<math>\begin{align}
+\mathrm{e}^{-\mathrm{i}\tilde x} &= \sum^{\infty}_{k=0}\frac{(-\mathrm{i}\tilde x)^k}{k!}\\[0.5em]
+&\ {\color{OliveGreen} \left\downarrow\ \text{absolute Konvergenz}\implies\text{Reihe aufspalten} \right.} \\[0.5em]
+& = \sum^{\infty}_{l=0}\frac{(-\mathrm{i}\tilde x)^{2l}}{(2l)!} + \sum^{\infty}_{l=0}\frac{(-\mathrm{i}\tilde x)^{2l+1}}{(2l+1)!}\\[0.5em]
+&\ {\color{OliveGreen} \left\downarrow\ (-\mathrm{i})^{2l} = (-1)^l \text{und } (-\mathrm{i})^{2l+1} = -\mathrm{i}\cdot (-1)^l \right.} \\[0.5em]
+& = \sum_{l=0}^\infty \frac{(-1)^l}{(2l)!}\tilde x^{2l} - \mathrm{i} \sum_{l=0}^\infty \frac{(-1)^l}{(2l+1)!}\tilde x^{2l+1}
+\end{align}</math>}}
+
+Schreiben wir <math>\alpha(x) = \sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math> and <math>\beta(x) = \sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math>. So haben wir gezeigt, dass
+
+{{Formel|<math>\begin{align}
+\mathrm{e}^{\mathrm{i}\tilde x} &= \alpha(x) + \mathrm i \beta(x) \\
+\mathrm{e}^{-\mathrm{i}\tilde x} &= \alpha(x) - \mathrm i \beta(x) \\
+\end{align}</math>}}
+
+Es folgt für die Differenz
+
+{{Formel|<math>\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{\mathrm{-i}x} = \alpha(x) + \mathrm{i} \beta(x) - (\alpha(x) - \mathrm{i} \beta(x)) = \mathrm{2i}\cdot \beta(x)</math>}}
+
+Damit ist:
+
+{{Formel|<math>\sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} = \beta(x) = \tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)</math>}}
+
+Analog ist:
+
+{{Formel|<math>\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{\mathrm{-i}x} = \alpha(x) + \mathrm{i} \beta(x) + (\alpha(x) - \mathrm{i} \beta(x)) = \mathrm{2}\cdot \alpha(x)</math>}}
+
+Es folgt:
+
+{{Formel|<math>\sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k} = \alpha(x) = \tfrac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)</math>}}
+}}
+
+{{#invoke:Mathe für Nicht-Freaks/Seite|unten
+ |weblinks=
+* [https://de.serlo.org/mathe/funktionen/wichtige-funktionstypen-ihre-eigenschaften/trigonometrische-funktionen Artikel zu trigonometrische functions bei serlo.org]
+
+ |quellen=
+* Seite „Sinus and Kosinus“. In: Wikipedia, Die freie Enzyklopädie. Bearbeitungsstand: 13. März 2017, 07:54 UTC. URL: https://de.wikipedia.org/w/index.php?title=Sinus_und_Kosinus&oldid=163536340 (Abgerufen: 17. März 2017, 16:03 UTC)
+}}

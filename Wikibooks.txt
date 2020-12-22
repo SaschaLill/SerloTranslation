@@ -1,0 +1,72 @@
+{{#invoke:Mathe für Nicht-Freaks/Seite|oben}}
+Damit eine Menge ein Supremum besitzen kann, muss sie nach oben beschränkt sein. In diesem Kapitel untersuchen wir den Fall unbeschränkter Mengen bzw. den Fall der leeren Menge.
+
+== Uneigentliche Suprema und Infima für unbeschränkte Mengen ==
+Eine Menge M ist nach oben unbeschränkt, wenn M keine obere Schranke besitzt. Für alle S \in \R gibt es also ein x \in M mit x > S. Dies ist dann auch die Definition der Unbeschränktheit nach oben:
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=nach oben unbeschränkte Menge
+ |definition=
+Eine Menge M ist nach oben unbeschränkt, wenn sie keine obere Schranke besitzt, wenn also
+
+\forall S \in \R\, \exists x \in M: S < x}}
+
+Wenn M nach oben unbeschränkt ist, schreiben wir nun
+
+\sup M = \infty
+
+Intuitiv lässt sich die Schreibweise gut erklären: „unendlich“ ist größer als jedes Element aus M und gleichzeitig kann es keine obere Schranke kleiner „unendlich“ geben, weil M nach oben unbeschränkt ist. Also ist es sinnvoll, „unendlich“ als Supremum einer nach oben unbeschränkten Menge anzusehen.
+
+''Aber Vorsicht!'' Das Symbol \infty ist keine reelle Zahl und damit bedeutet \sup M = \infty auch nicht, dass \infty Supremum von M wäre, weil Suprema per Definition immer reell sein müssen. Es gibt auch kein Objekt \infty in unserer Theorie, weil die von uns in den ersten Kapiteln formulierten Axiome kein Objekt \infty zulassen. Deshalb müsste eine Schreibweise wie \sup M = \infty von uns abgelehnt werden.
+
+Um diese Widersprüche aufzulösen, sehen wir \sup M = \infty nur als Kurzschreibweise für den Fakt an, dass M nach oben unbeschränkt ist, und nennen \infty das ''uneigentliche Supremum'' von M:
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=uneigentliches Supremum
+ |definition=
+Ist eine Menge M nach oben unbeschränkt, so nennen wir \infty das ''uneigentliche Supremum'' von M und schreiben
+
+\sup M = \infty}}
+
+{{:Mathe für Nicht-Freaks: Vorlage:Warnung|1=Das Adjektiv „uneigentlich“ ist hier sehr wichtig. Achte darauf, dass du es immer verwendest. \infty ist nämlich keine reelle Zahl und kann deswegen kein Supremum sein. Es verhält sich nur in mancher Hinsicht wie ein Supremum. Kurz: Auch wenn man \sup M = \infty schreibt, dann besitzt M trotzdem kein Supremum!}}
+
+Analog gilt für nach unten unbeschränkte Mengen:
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=uneigentliches Infimum
+ |definition=
+Eine Menge M ist nach unten unbeschränkt, wenn es für alle S \in \R ein x \in M mit x < S gibt. In diesem Fall schreibt man
+
+\inf M = -\infty}}
+
+== Uneigentliches Supremum und Infimum der leeren Menge ==
+Ein weiterer Sonderfall ist die leere Menge. Hier ist nämlich nicht das Problem, dass es keine oberen beziehungsweise unteren Schranken gibt, sondern zu viele obere und untere Schranken existieren. In den Lehrbüchern findest du dafür folgende Definitionen:
+
+{{:Mathe für Nicht-Freaks: Vorlage:Definition
+ |titel=Uneigentliches Supremum und Infimum der leeren Menge
+ |definition=
+Für die leere Menge \emptyset gilt
+
+\begin{array}
+\sup \emptyset & = -\infty \\
+\inf \emptyset & = \infty
+\end{array}}}
+
+Auch hier handelt es sich um uneigentliche und damit um ''keine echten'' Suprema und Infima. Doch wieso ergibt obige Festlegung Sinn?
+
+Gehen wir schrittweise vor: Per Definition ist das Supremum die kleinste obere Schranke einer Menge. Was sind also die oberen Schranken der leeren Menge? Eine Zahl S ist per Definition eine obere Schranke von \emptyset, wenn
+
+\forall x \in \emptyset : x \le S
+
+{{:Mathe für Nicht-Freaks: Vorlage:Frage
+ |frage=Was sind die oberen Schranken von \emptyset?
+ |antwort=
+Allaussagen über die leere Menge wie die obige sind immer wahr (es gibt nämlich kein x in \emptyset, für welches man die Bedingung x \le S überprüfen müsste). Damit ist jede reelle Zahl eine obere Schranke der leeren Menge. Als Bezeichnung für die kleinste all dieser oberen Schranken von \emptyset kann man also -\infty verwenden. Jedoch ist -\infty keine reelle Zahl und daher auch kein Supremum im eigentlichen Sinne.}}
+
+{{:Mathe für Nicht-Freaks: Vorlage:Frage
+ |frage=Wieso ergibt \inf \emptyset = \infty Sinn?
+ |typ=Verständnisfrage
+ |antwort=
+Eine Zahl S ist untere Schranke der leeren Menge, wenn \forall x \in \emptyset: x \ge S. Diese Allaussage ist stets wahr und damit ist jede reelle Zahl eine untere Schranke von \emptyset. Als Bezeichnung für die größte all dieser unteren Schranken von \emptyset kann man also \infty verwenden. Jedoch ist \infty keine reelle Zahl und daher auch kein Infimum im eigentlichen Sinne.}}
+
+{{#invoke:Mathe für Nicht-Freaks/Seite|unten}}
