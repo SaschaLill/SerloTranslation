@@ -1,190 +1,307 @@
 {{#invoke:Mathe für Nicht-Freaks/Seite|oben}}
+Wir werden hier eine Beweisstruktur angeben, die zeigt, wie du immer die Linearität einer map zeigen kannst.
+== Allgemeine Vorgehensweise ==
 
-In diesem Kapitel behandeln wir die beiden trigonometrischen functions ''Sinus'' and ''Kosinus''. Sie bilden die wichtigsten trigonometrischen functions and werden unter anderem in der Geometrie für Dreiecksberechnungen sowie der Trigonometrie benötigt. Wellen wie elektromagnetische Wellen sowie harmonische Schwingungen lassen sich über Sinus- beziehungsweise cosine functionen beschreiben, sodass diese in der Physik allgegenwärtig sind.
+=== Wiederholung: Definition der linear map ===
 
-== Definition über Einheitskreis ==
-Es gibt mehrere Möglichkeiten, den Sinus and den Kosinus zu definieren. Aus der Schule wird dir möglicherweise schon die Definition vom Sinus and Kosinus am Einheitskreis bekannt sein. Dabei wird ein Punkt <math>P(x,y)</math> betrachtet, der sich auf einem Kreis um den Ursprung with Radius <math>r = 1</math> befindet. Die <math>x</math>-Achse schließt with der Strecke vom Nullpunkt zu <math>P(x,y)</math> den Winkel <math>\theta</math> ein:
+Wir erinnern uns daran, dass eine linear map (oder auch Homomorphismus) eine strukturerhaltende map of einem <math>K</math>-vector space <math>V</math> in einen <math>K</math>-vector space <math>W</math> ist. Das bedeutet, für die map <math>f \colon V \to W</math> müssen folgende zwei Bedingungen gelten:
+# <math> f</math> muss additiv sein, d.h. for <math>v,w \in V</math> we have that: <math>f(v + w) = f(v) + f(w)</math>
+# <math> f</math> muss homogen sein, d.h. for <math>v \in V, \lambda \in K</math> we have that: <math>f(\lambda \cdot v) = \lambda \cdot f(v)</math>
 
-[[File:Sinus and Kosinus am Einheitskreis 2.svg|center|250px|Der Punkt P auf dem Einheitskreis with den Koordinaten (x,y)]]
+Bei einer linear map ist es also egal, ob wir zuerst die Addition bzw. scalar multiplication im vector space <math>V</math> durchführen and dann die Summe in den vector space <math>W</math> abbilden, oder zuerst die vectors <math>v,\,w</math> in den vector space <math>W</math> abbilden and dort die Addition bzw. scalar multiplication with den Bildern der map durchführen.
 
-Der Winkel <math>\theta</math> legt eindeutig fest, wo sich der Punkt <math>P(x,y)</math> befindet. Damit kann die <math>x</math>-Koordinate and die <math>y</math>-Koordinate jeweils durch eine von <math>\theta</math> abhängige function beschrieben werden. Diese functions <math>x(\theta)</math> and <math>y(\theta)</math> nennen wir die sine function <math>\cos(\theta)</math> beziehungsweise <math>\sin(\theta)</math>:
+=== Beweisstrukur für eine linear map ===
 
-[[File:Sinus and Kosinus am Einheitskreis 1.svg|center|250px|Die Sinus and cosine function am Einheitskreis]]
+Der Beweis, dass eine map linear ist, kann nach folgender Struktur durchgeführt werden.
+Zunächst gehen wir davon aus, dass eine map <math>f \colon V \to W</math> zwischen vector spaces gegeben ist. Das heißt, <math>V</math> and <math> W</math> sind <math>K</math>-vector spaces and <math>f</math> ist wohldefiniert.
+Dann ist für die Linearität of <math>f</math> zu zeigen:
+# additivity: <math>\forall v,\,w \in V:\quad f(v+w) = f(v) + f(w) </math>
+# homogeneity: <math>\forall v \in V \, \forall \lambda \in K:\quad f(\lambda \cdot v) = \lambda \cdot f(v)</math>
 
-Im sequencesden nehmen wir <math>x</math> als Winkel and schreiben <math>\sin(x)</math> anstelle von <math>\sin(\theta)</math> beziehungsweise <math>\cos(x)</math> anstatt <math>\cos(\theta)</math>. Damit ergibt sich folgende Definition:
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=Einführendes Beispiel
+ |aufgabe=
+Wir betrachten folgende map
+{{Formel|<math>f\colon \R^2\to\R,\quad f\begin{pmatrix}v_1\\v_2\end{pmatrix}:=2v_1+v_2</math>}}
 
-{{:Mathe für Nicht-Freaks: Vorlage:Definition
- |titel=Definition Sinus and Kosinus am Einheitskreis
- |definition=
-Let <math>P</math> der Punkt auf dem Einheitskreis, dessen Ortsvektor with der horizontalen Koordinatenachse den Winkel <math>x</math> einschließt. Die Koordinaten von <math>P</math> sind dann <math>(\cos(x),\sin(x))</math>. Dabei nennt man <math>\cos(x)</math> den Kosinus von <math>x</math> and <math>\sin(x)</math> den Sinus von <math>x</math>.
-}}
-
-== Graph der Sinus and cosine function ==
-
-Die folgende Animation zeigt, wie die Graphen der Sinus- beziehungsweise cosine function schrittweise konstruiert werden:
-
-[[File:Mfnf-sincos.gif|center|Animation zur Definition des Sinus and des Kosinus am Einheitskreis]]
-
-Damit ergibt sich folgender Graph für die sine function:
-
-[[Datei:Sine.svg|center|500px|Graph der sine function]]
-
-For die cosine function erhalten wir:
-
-[[Datei:Cosine.svg|center|500px|Graph der cosine function]]
-
-== Definition über exponential function ==
-=== Darstellung über complex exponential function ===
-Die Sinus- and cosine function kann auch als Summe von gewissen complex exponential functionen definiert werden. Mit dieser Darstellung können besonders elegant Eigenschaften vom Sinus and Kosinus nachgewiesen werden. 
-
-{{:Mathe für Nicht-Freaks: Vorlage:Definition
- |titel=Sinus and Kosinus über complex exponential function
- |definition=
-Wir definieren the functions <math>\sin</math> (Sinus) and <math>\cos</math> (Kosinus) durch
-
-{{Formel|<math>\begin{align}
-& \sin:\R\to\R: x\mapsto \frac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right) \\[0.3em]
-& \cos:\R\to\R: x\mapsto \frac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)
-\end{align}</math>}}
-}}
-
-Diese functions sind wohldefiniert: For every  real number <math>x</math> ist die complex number <math>\mathrm{e}^{-\mathrm ix}</math> die komplex Konjugierte von <math>\mathrm{e}^{\mathrm ix}</math>. Damit ist <math>\mathrm{e}^{ix}+\mathrm{e}^{-ix}</math> eine real number and es there is <math>\cos(x)=\tfrac{1}{2}\left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)\in\R</math>. Auf analoge Art kann man zeigen, dass <math>\sin(x)=\tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)\in\R</math> ist.
-
-=== Herleitung der Exponentialdefinition ===
-Man kann zeigen, dass <math>e^{\mathrm i\theta}</math> der Punkt auf dem Einheitskreis ist, dessen Ortsvektor with der <math>x</math>-Achse den Winkel <math>\theta</math> einschließt:
-
-[[File:Sinus and Kosinus am Einheitskreis 3.svg|center|250px|e^(i?) im Einheitskreis]]
-
-Der real part der complex number <math>e^{\mathrm i\theta}</math> ist damit <math>\cos(\theta)</math>, and der imaginary part ist <math>\sin(\theta)</math>. There is also <math>e^{\mathrm i\theta} = \cos(\theta)+\sin(\theta)\mathrm i</math>. Bei <math>e^{-\mathrm i\theta}</math> betrachten wir den Winkel <math>-\theta</math>. Der Punkt <math>e^{-\mathrm i\theta}</math> liegt gespiegelt an der reellen Achse auf der anderen Seite:
-
-[[File:Sinus and Kosinus am Einheitskreis 4.svg|center|250px|e^(-i?) im Einheitskreis]]
-
-Damit ist der real part von <math>e^{-\mathrm i\theta}</math> derselbe wie bei <math>e^{\mathrm i\theta}</math>, also <math>\cos(\theta)</math>. Jedoch ist der imaginary part gegenüber <math>e^{\mathrm i\theta}</math> um die number <math>-1</math> multipliziert and damit gleich <math>-\sin(\theta)</math>. Wir erhalten <math>e^{-\mathrm i\theta} = \cos(\theta)-\sin(\theta)\mathrm i</math>. Also haben wir:
-
-{{Formel|<math>\begin{align}
-e^{\mathrm i\theta} & = \cos(\theta)+\sin(\theta)\mathrm i \\[0.3em]
-e^{-\mathrm i\theta} & = \cos(\theta)-\sin(\theta)\mathrm i
-\end{align}</math>}}
-
-Durch Addition beider Gleichungen erhalten wir:
-
-{{Formel|<math>e^{\mathrm i\theta} + e^{-\mathrm i\theta} = 2\cos(\theta) \implies \cos(\theta) = \frac 12\left(e^{\mathrm i\theta} + e^{-\mathrm i\theta}\right)</math>}}
-
-Und durch Subtraktion der beiden Gleichungen ergibt sich:
-
-{{Formel|<math>e^{\mathrm i\theta} - e^{-\mathrm i\theta} = 2\sin(\theta)\mathrm i \implies \sin(\theta) = \frac{1}{2\mathrm i}\left(e^{\mathrm i\theta} - e^{-\mathrm i\theta}\right)</math>}}
-
-Damit haben wir die beiden Definitionen <math>\sin(x) = \tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)</math> and <math>\cos(x) = \tfrac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)</math> hergeleitet. Diese Herleitung ist noch einmal in folgender Grafik illustriert:
-
-[[Datei:Sine Cosine Exponential qtl1.svg|center|300px|Herleitung der complex Exponentialdarstellung des Sinus and Kosinus]]
-
-== Reihendarstellung vom Sinus and Kosinus ==
-=== Definition als Reihe === 
-[[File:Sine.gif|thumb|Diese Animation illustriert die Definition der sine function durch eine Reihe. Je höher die number <math>N</math> ist, desto mehr Summanden werden in der Reihendefinition verwendet. So ist bei <math>N=2</math> neben der sine function zusätzlich das kubische Polynom <math>\sum_{k=0}^{2-1} \tfrac{(-1)^k}{(2k+1)!}x^{2k+1} = x - \tfrac{x^3}{6}</math> eingezeichnet.]]
-In der Vorlesung wird oft eine andere Definition bevorzugt, nämlich die sogenannte ''Reihendarstellung'', bei der der Sinus and Kosinus über eine Reihe definiert wird. Die Reihendarstellung ist zwar weniger anschaulich als die Definition über dem Einheitskreis, with ihr können aber einige Eigenschaften des Sinus and Kosinus leichter bewiesen werden. Außerdem kann with ihr der Sinus and Kosinus auf complex numbers erweitert werden.
-
-{{:Mathe für Nicht-Freaks: Vorlage:Definition
- |titel=Sinus and Kosinus
- |definition=
-Wir definieren the functions <math>\sin</math> (Sinus) and <math>\cos</math> (Kosinus) durch
-
-{{Formel|<math>\begin{align}
-& \sin:\R\to\R, x\mapsto \sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} \\[0.3em]
-& \cos:\R\to\R, x\mapsto \sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k}
-\end{align}</math>}}}}
-
-=== Wohldefiniertheit der Reihendarstellung ===
-Wir müssen nachweisen, dass unsere Reihendarstellung der Sinus- and cosine function wohldefiniert ist. Sprich: Wir müssen zeigen, dass for all <math>x \in \R</math> die Reihen <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> beziehungsweise <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math> gegen eine real number konvergieren.
-
-{{:Mathe für Nicht-Freaks: Vorlage:Satz
- |satz=
-For alle real numbers <math>x</math> konvergieren die Reihen <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> and <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math>.
-
+und zeigen, dass diese linear ist.
  |beweis=
-Wir beweisen den theorem für die Reihe <math>\sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math> der sine function. Der Beweis für die Reihe der cosine function kann analog geführt werden. For <math> x = 0</math> finden wir zunächst:
+Zunächst sind <math>\R^2</math> and <math>\R</math> vector spaces über dem field <math>\R</math>. Außerdem ist die map <math>f</math> wohldefiniert.
 
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=additivity nachweisen
+ |beweisschritt=
+Let <math>\begin{pmatrix}v_1\\v_2\end{pmatrix},\,\begin{pmatrix}w_1\\w_2\end{pmatrix} \in \R^2</math>. 
 {{Formel|<math>\begin{align}
-& \sum_{k=0}^{\infty}{\frac{(-1)^k}{(2k+1)!} x^{2k+1}} \\[0.3em]
-&\ {\color{OliveGreen} \left\downarrow\ x=0 \right.} \\[0.3em]
-=\ & \sum_{k=0}^{\infty}{\frac{(-1)^k}{(2k+1)!}0^{2k+1}} \\[0.3em]
-=\ & \sum_{k=0}^{\infty}{0} = 0
+f\left( \begin{pmatrix}v_1\\v_2\end{pmatrix}+\begin{pmatrix}w_1\\w_2\end{pmatrix}\right)&=f \begin{pmatrix}v_1+w_1\\v_2+w_2\end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&=\ 2(v_1+w_1)+(v_2+w_2)\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{distributive law}\right.} \\[0.3em]
+&=\ 2v_1+2w_1+v_2+w_2\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Kommutativ-, associative law } \right.} \\[0.3em]
+&=\ (2v_1+v_2)+(2w_1+w_2)\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&=\ f\begin{pmatrix}v_1\\v_2\end{pmatrix}+f\begin{pmatrix}w_1\\w_2\end{pmatrix}
 \end{align}</math>}}
 
-For <math> x = 0</math> konvergiert die Reihe demnach. For <math> x \neq 0</math> wenden wir das [[Mathe für Nicht-Freaks: Quotientenkriterium|Quotientenkriterium]] an. Let hierzu <math>a_k:=\tfrac{(-1)^k}{(2k+1)!} x^{2k+1}</math> for all <math>k\in\N_0</math>, so dass wir <math>\sum_{k=0}^{\infty}{\tfrac{(-1)^k}{(2k+1)!} x^{2k+1}}=\sum_{k=0}^{\infty}{a_k}</math> haben. There is:
-
-{{Formel|<math>\begin{align}
-& \lim_{k\to\infty}{\left|\frac{a_{k+1}}{a_k}\right|} \\[0.3em] 
-=\ & \lim_{k\to\infty}{\left|-\frac{ x^{2(k+1)+1}\cdot (2k+1)!}{ x^{2k+1}\cdot (2(k+1)+1)!}\right|} \\[0.3em]
-=\ & \lim_{k\to\infty}{\left|-\frac{ x^{2k+3}\cdot (2k+1)!}{ x^{2k+1}\cdot (2k+3)!}\right|} \\[0.3em]
-=\ & \lim_{k\to\infty}{\left|\frac{x^2}{(2k+2)(2k+3)}\right|} = 0
-\end{align}</math>}}
-
-Wegen <math>\lim_{k\to\infty}{\left|\tfrac{a_{k+1}}{a_k}\right|}=0</math> konvergiert die Reihe nach dem Quotientenkriterium.
+Damit haben wir die additivity of <math>f</math> nachgewiesen.
 }}
 
-== Äquivalenz der Exponential- and Reihendarstellung ==
-Wir haben mehrere Definitionen der Sinus- and cosine function kennen gelernt. Einen Zusammenhang zwischen der Exponentialdarstellung and der Definition am Einheitskreis haben wir bereits hergestellt. Nun müssen wir noch zeigen, dass die Exponential- and die Reihendarstellung äquivalent zueinander sind.
-
-{{:Mathe für Nicht-Freaks: Vorlage:Satz
- |satz=
-There is for all <math>x \in \R</math>: 
-
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=homogeneity nachweisen
+ |beweisschritt=
+Let <math>\begin{pmatrix}v_1\\v_2\end{pmatrix}\in\R^2</math> and <math>\lambda\in\R</math>. Then, we have 
 {{Formel|<math>\begin{align}
-\sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} &= \frac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right) \\[0.5em]
-\sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k} &= \frac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)
+f\left(\lambda\begin{pmatrix} v_1\\ v_1\end{pmatrix}\right)&=f\begin{pmatrix}\lambda v_1\\\lambda v_2\end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&=\ 2\lambda v_1+\lambda v_2\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{distributive law } \right.} \\[0.3em]
+&=\ \lambda(2v_1+v_2)\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&=\ \lambda\cdot f\begin{pmatrix}v_1\\v_2\end{pmatrix}
 \end{align}</math>}}
 
-Damit ist es egal, ob die Sinus- bzw. cosine function über ihre Reihendarstellung oder über ihre Exponentialdarstellung definiert wird.
+Damit haben wir die homogeneity of <math>f</math> nachgewiesen.
+}}
+}}
 
+== Die Nullabbildung ==
+Die Nullabbildung ist diejenige map, die alles auf die Null abbildet. Im Example der Nullabbildung of <math>\R</math> nach <math>\R^3</math> sieht diese map folgendermaßen aus:
+
+{{Formel|<math>f\colon \R\to\R^3,\quad x\mapsto\begin{pmatrix}0\\0\\0\end{pmatrix}</math>}}
+
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=Nullabbildung ist linear
+ |aufgabe=Show that, die map <math>f\colon \R\to\R^3,\quad x\mapsto\begin{pmatrix}0\\0\\0\end{pmatrix}</math> ist linear. 
  |beweis=
-Wir wissen bereits vom Kapitel über die [[Mathe_für_Nicht-Freaks:_Herleitung_und_Definition_der_exponential function|exponential function]], dass die exponential function die Reihendarstellung <math>\exp(x) = \sum_{k=0}^{\infty}{\tfrac{x^k}{k!}}</math> hat. Wenn wir nun <math>\mathrm{i}\tilde x</math> for <math>x</math> in die Reihendarstellung einsetzen, erhalten wir: 
+Wir wissen bereits, dass <math>\R</math> and <math>\R^3</math> beide <math>\R</math>-vector spaces sind and dass die Nullabbildung wohldefiniert ist.
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=additivity
+ |beweisschritt=
+For alle <math>x,y\in\R</math> we have that 
 
 {{Formel|<math>\begin{align}
-\mathrm{e}^{\mathrm{i}\tilde x} &= \sum^{\infty}_{k=0}\frac{(\mathrm{i}\tilde x)^k}{k!}\\[0.5em]
-&\ {\color{OliveGreen} \left\downarrow\ \text{absolute Konvergenz}\implies\text{Reihe aufspalten} \right.} \\[0.5em]
-& = \sum^{\infty}_{l=0}\frac{(\mathrm{i}\tilde x)^{2l}}{(2l)!} + \sum^{\infty}_{l=0}\frac{(\mathrm{i}\tilde x)^{2l+1}}{(2l+1)!}\\[0.5em]
-&\ {\color{OliveGreen} \left\downarrow\ \mathrm{i}^{2l} = (-1)^l \text{und } \mathrm{i}^{2l+1} = \mathrm{i}\cdot (-1)^l \right.} \\[0.5em]
-& = \sum_{l=0}^\infty \frac{(-1)^l}{(2l)!}\tilde x^{2l} + \mathrm{i} \sum_{l=0}^\infty \frac{(-1)^l}{(2l+1)!}\tilde x^{2l+1}
+
+
+f(x+y)
+&=\begin{pmatrix}0\\0\\0\end{pmatrix}\\[0.3em]
+&{\color{OliveGreen}\left\downarrow\  \text{additives neutrales Element} \right.}\\[0.3em]
+&=\begin{pmatrix}0\\0\\0\end{pmatrix}+\begin{pmatrix}0\\0\\0\end{pmatrix}\\[0.3em]
+&{\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.}\\[0.3em]
+&=f(x)+f(y)
 \end{align}</math>}}
-
-Nun setzen wir <math>-\mathrm{i}\tilde x</math> in die Reihendarstellung der exponential function ein:
-
-{{Formel|<math>\begin{align}
-\mathrm{e}^{-\mathrm{i}\tilde x} &= \sum^{\infty}_{k=0}\frac{(-\mathrm{i}\tilde x)^k}{k!}\\[0.5em]
-&\ {\color{OliveGreen} \left\downarrow\ \text{absolute Konvergenz}\implies\text{Reihe aufspalten} \right.} \\[0.5em]
-& = \sum^{\infty}_{l=0}\frac{(-\mathrm{i}\tilde x)^{2l}}{(2l)!} + \sum^{\infty}_{l=0}\frac{(-\mathrm{i}\tilde x)^{2l+1}}{(2l+1)!}\\[0.5em]
-&\ {\color{OliveGreen} \left\downarrow\ (-\mathrm{i})^{2l} = (-1)^l \text{und } (-\mathrm{i})^{2l+1} = -\mathrm{i}\cdot (-1)^l \right.} \\[0.5em]
-& = \sum_{l=0}^\infty \frac{(-1)^l}{(2l)!}\tilde x^{2l} - \mathrm{i} \sum_{l=0}^\infty \frac{(-1)^l}{(2l+1)!}\tilde x^{2l+1}
-\end{align}</math>}}
-
-Schreiben wir <math>\alpha(x) = \sum_{k=0}^\infty \tfrac{(-1)^k}{(2k)!}x^{2k}</math> and <math>\beta(x) = \sum_{k=0}^\infty \tfrac{(-1)^k}{(2k+1)!}x^{2k+1}</math>. So haben wir gezeigt, dass
-
-{{Formel|<math>\begin{align}
-\mathrm{e}^{\mathrm{i}\tilde x} &= \alpha(x) + \mathrm i \beta(x) \\
-\mathrm{e}^{-\mathrm{i}\tilde x} &= \alpha(x) - \mathrm i \beta(x) \\
-\end{align}</math>}}
-
-Es folgt für die Differenz
-
-{{Formel|<math>\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{\mathrm{-i}x} = \alpha(x) + \mathrm{i} \beta(x) - (\alpha(x) - \mathrm{i} \beta(x)) = \mathrm{2i}\cdot \beta(x)</math>}}
-
-Damit ist:
-
-{{Formel|<math>\sum_{k=0}^\infty \frac{(-1)^k}{(2k+1)!}x^{2k+1} = \beta(x) = \tfrac{1}{2\mathrm{i}} \left(\mathrm{e}^{\mathrm{i}x} - \mathrm{e}^{-\mathrm{i}x} \right)</math>}}
-
-Analog ist:
-
-{{Formel|<math>\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{\mathrm{-i}x} = \alpha(x) + \mathrm{i} \beta(x) + (\alpha(x) - \mathrm{i} \beta(x)) = \mathrm{2}\cdot \alpha(x)</math>}}
-
-Es folgt:
-
-{{Formel|<math>\sum_{k=0}^\infty \frac{(-1)^k}{(2k)!}x^{2k} = \alpha(x) = \tfrac{1}{2} \left(\mathrm{e}^{\mathrm{i}x} + \mathrm{e}^{-\mathrm{i}x} \right)</math>}}
 }}
 
-{{#invoke:Mathe für Nicht-Freaks/Seite|unten
- |weblinks=
-* [https://de.serlo.org/mathe/funktionen/wichtige-funktionstypen-ihre-eigenschaften/trigonometrische-funktionen Artikel zu trigonometrische functions bei serlo.org]
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=homogeneity
+ |beweisschritt=
+For alle <math>x\in\R,\lambda\in\R</math> we have that
 
- |quellen=
-* Seite „Sinus and Kosinus“. In: Wikipedia, Die freie Enzyklopädie. Bearbeitungsstand: 13. März 2017, 07:54 UTC. URL: https://de.wikipedia.org/w/index.php?title=Sinus_und_Kosinus&oldid=163536340 (Abgerufen: 17. März 2017, 16:03 UTC)
+{{Formel|<math>\begin{align}
+f(\lambda\cdot x)
+&=\begin{pmatrix}0\\0\\0\end{pmatrix}\\[0.3em]
+&{\color{OliveGreen}\left\downarrow\  \text{scalar multiplication }  \right.}\\[0.3em]
+&=\lambda\cdot \begin{pmatrix}0\\0\\0\end{pmatrix}\\[0.3em]
+&{\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.}\\[0.3em]
+&=\lambda\cdot f(x)\end{align}</math>}}
 }}
+Damit ist die Nullabbildung linear.
+}}
+
+==Ein Example im <math>\R^2</math>==
+Wir betrachten ein Example für eine linear map of <math>\R^2</math> nach <math>\R^2</math>: 
+
+<math>f \colon \R^2 \to \R^2</math> with <math>f\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix}x_1+x_2\\x_1-5x_2\end{pmatrix}</math>
+
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=Linearität of <math>f</math>
+ |aufgabe=Show that die map <math>f \colon \R^2 \to \R^2,\begin{pmatrix}x_1\\x_2\end{pmatrix}\mapsto\begin{pmatrix}x_1+x_2\\x_1-5x_2\end{pmatrix}</math> linear ist.
+ |beweis=<math>\R^2</math> ist ein <math>\R</math>-vector space. Außerdem ist die map wohldefiniert.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=additivity
+ |beweisschritt=
+Let <math>(x_1, x_2)^T</math> and <math>(y_1, y_2)^T</math> beliebige vectors aus der plane <math>\R^2</math>. Then, we have:
+
+{{Formel|<math>\begin{align}
+f\left(\begin{pmatrix}x_1\\x_2\end{pmatrix}+\begin{pmatrix}y_1\\y_2\end{pmatrix}\right) 
+&=f\begin{pmatrix}x_1+y_1\\x_2+y_2\end{pmatrix} \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\ \text{Definition of }f \right.} \\[0.3em]
+& =\begin{pmatrix}(x_1+y_1)+(x_2+y_2)\\(x_1+y_1)-5\cdot(x_2+y_2)\end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{distributive law}\right.} \\[0.3em]
+& =\begin{pmatrix}(x_1+x_2)+(y_1+y_2)\\(x_1-5 x_2)+(y_1-5 y_2)\end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{vectors trennen}  \right.} \\[0.3em]
+& =\begin{pmatrix} x_1+x_2\\x_1-5 x_2\end{pmatrix} + \begin{pmatrix}y_1+y_2\\y_1-5 y_2\end{pmatrix}\\[0.3em] 
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of }f \right.} \\[0.3em]
+& =f\begin{pmatrix}x_1\\x_2\end{pmatrix}+f\begin{pmatrix}y_1\\y_2\end{pmatrix}
+\end{align}</math>}}
+}}
+
+
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=homogeneity
+ |beweisschritt=
+Let  <math>\lambda\in\R</math> and <math>(x_1, x_2)^T \in \R^2</math>, dann we have that:
+
+{{Formel|<math>\begin{align} 
+f\left(\lambda \cdot \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}\right) 
+&= f\begin{pmatrix}\lambda \cdot x_1 \\ \lambda \cdot x_2 \end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&= \begin{pmatrix}\lambda x_1 +\lambda x_2 \\ \lambda x_1 - 5 \lambda x_2 \end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{distributive law} \right.} \\[0.3em]
+&= \begin{pmatrix}\lambda (x_1 + x_2) \\ \lambda (x_1 - 5  x_2) \end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{scalar multiplication} \right.} \\[0.3em]
+&= \lambda\cdot \begin{pmatrix} (x_1 + x_2) \\  (x_1 - 5  x_2) \end{pmatrix}\\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } f \right.} \\[0.3em]
+&= \lambda\cdot f\begin{pmatrix} x_1 \\  x_2 \end{pmatrix}\\[0.3em]
+\end{align}</math>}}
+}}
+Damit ist die map linear.
+}}
+
+==Eine linear map im sequencesvektorraum==
+Als nächstes betrachten wir den Raum aller sequences reeller numbers. Dieser ist nicht endlich-dimensional, denn es gibt nicht endlich viele sequences, die diesen sequencesraum erzeugen. Er ist aber ein vector space, wie wir im Kapitel über [[Mathe_für_Nicht-Freaks: sequencesräume|sequencesräume]] gezeigt haben.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=sequencesvektorraum
+ |aufgabe=Let <math>V</math> der <math>\R</math>-vector space aller sequences reeller numbers. Show that die map
+
+{{Formel|<math>\begin{align}
+f: V&\to V \\
+(a_0,a_1,a_2,\ldots)&\mapsto(a_1,a_2,a_3,\ldots)
+\end{align}</math>}}
+
+linear ist.
+ |lösungsweg=
+Um Linearität zu zeigen, sind zwei Eigenschaften zu prüfen:
+# <math>f</math> ist additiv: <math>f(v+w)=f(v)+f(w)</math> for all <math>v,w\in V</math>
+# <math>f</math> ist homogen: <math>f(\lambda\cdot v)=\lambda\cdot f(v)</math> for all <math>v\in V</math> and <math>\lambda\in\R</math>
+Die vectors <math>v</math> and <math>w</math> sind sequences reeller numbers, d.h. sie sind of der Form 
+<math>v=(a_0,a_1,a_2,\ldots)</math> and <math>w=(b_0,b_1,b_2,\ldots)</math> with <math>a_k,b_k\in\R</math> for all <math>k\in\N_0</math>.
+ |beweis=
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=additivity
+ |beweisschritt=
+Let <math>v=(a_0,a_1,a_2,\ldots)\in V</math> and <math>w=(b_0,b_1,b_2,\ldots)\in V</math>. Then, we have
+
+{{Formel|<math>\begin{align}
+f(v+w)&= f((a_0,a_1,a_2,\ldots)+(b_0,b_1,b_2,\ldots))\\[0.3em]
+&=\ f(a_0+b_0,a_1+b_1,a_2+b_2,\ldots)\\[0.3em]
+&=\ (a_1+b_1,a_2+b_2,a_3+b_3,\ldots)\\[0.3em]
+&=\ (a_1,a_2,a_3,\ldots)+(b_1,b_2,b_3,\ldots)\\[0.3em]
+&=\ f(a_0,a_1,a_2,\ldots)+f(b_0,b_1,b_2,\ldots)\\[0.3em]
+&=\ f(v)+f(w)\end{align}</math>}}
+
+Daraus folgt, dass <math>f</math> additiv ist.}}
+
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=homogeneity
+ |beweisschritt=
+Let <math>v=(a_0,a_1,a_2,\ldots)\in V</math> and <math>\lambda\in\R</math>. Then, we have
+
+{{Formel|<math>\begin{align}
+f(\lambda\cdot v)&=f(\lambda\cdot(a_0,a_1,a_2,\ldots))\\[0.3em]
+&=\ f(\lambda a_0,\lambda a_1,\lambda a_2,\ldots)\\[0.3em]
+&=\ (\lambda a_1,\lambda a_2,\lambda a_3,\ldots)\\[0.3em]
+&=\ \lambda\cdot(a_1,a_2,a_3,\ldots)\\[0.3em]
+&=\ \lambda\cdot f(a_0,a_1,a_2,\ldots)\\[0.3em]
+&=\ \lambda\cdot f(v)
+\end{align}</math>}}
+
+So <math>f</math> homogen.}}
+
+Somit wurde nachgewiesen, dass <math>f</math> eine <math>\R</math>-linear map ist.
+}}
+
+== Abstraktes Example ==
+Wir beschäftigen uns in diesem Kapitel with etwas abstrakteren vectors. Let <math>M, \,N</math> beliebige Mengen; <math>K</math> ein field and <math>V</math> ein <math>K</math>-vector space. Wir betrachten nun die Menge aller maps der Menge <math>M</math> in den vector space <math>V</math> and bezeichnen diese Menge with <math>\text{Abb}(M,V)</math>. Weiterhin betrachten wir auch die Menge aller maps der Menge <math>N</math> in den vector space <math>V</math> and bezeichnen diese Menge with <math>\text{Abb}(N,V)</math>. Die Addition zweier maps definieren wir for <math>f,g \in \text{Abb}(M,V)</math> durch
+
+{{Formel|<math>(f+g)(m) = f(m) + g(m)</math>}}
+
+Die scalar multiplication definieren wir for <math>\lambda \in K</math> durch
+
+{{Formel|<math>(\lambda \cdot f)(m) = \lambda \cdot f(m)</math>}} 
+
+Analog definieren wir die Addition and die scalar multiplication for <math>\text{Abb}(N,V)</math>.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=Die Menge <math>\text{Abb}(M,V)</math> ist ein vector space über <math>K</math>
+ |aufgabe=
+Show that <math>\text{Abb}(M,V)</math> ein <math>K</math>-vector space ist.
+ |lösungsweg=Überprüfe einfach die vector spaceaxiome.}}
+
+Wir betrachten nun eine map
+
+{{Formel|<math>\begin{align}
+\Theta:\text{Abb}(M,V)&\to\text{Abb}(N,V) \\
+g&\mapsto g\circ t
+\end{align}</math>}}
+
+wobei <math>t \colon N \to M ;\,n \mapsto t(n)\in M</math>, also <math>t \in \text{Abb}(N,M)</math> beliebig.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Aufgabe
+ |titel=Die map <math>\Theta</math> ist linear.
+ |aufgabe=
+Show that:
+
+{{Formel|<math>\Theta:\text{Abb}(M,V) \to \text{Abb}(N,V);\,g \mapsto g \circ t</math>}}
+
+ist eine linear map.
+
+ |erklärung=
+
+We have that wichtig, dass du dich genau an die Definitionen hältst. Mache dir klar, dass <math>\Theta</math> eine map ist, die every  map of <math>M</math> nach <math>V</math> eine map of <math>N</math> nach <math>V</math> zuordnet. Diese maps, die Elemente of <math>\text{Abb}(M,V)</math> bzw. <math>\text{Abb}(N,V)</math> sind, müssen selbst aber nicht linear sein, da auf den Mengen <math>M</math> and <math>N</math> keine vector spacetruktur vorhanden ist.
+
+ |zusammenfassung=
+
+Um die Linearität of <math>\Theta</math> zu beweisen, müssen wir wieder die zwei Eigenschaften prüfen:
+
+# <math>\Theta</math> ist additiv: <math>\Theta(g+h)=\Theta(g)+\Theta(h)</math> for all <math>g,h\in\text{Abb}(M,V)</math>
+# <math>\Theta</math> ist homogen: <math>\Theta(\lambda\cdot g)=\lambda\cdot\Theta(g)</math> for all <math>g\in\text{Abb}(M,V)</math> and <math>\lambda\in K</math>
+
+Bei beiden Punkten ist also eine Gleichheit of maps <math>N\to V</math> zu zeigen. Dazu werten wir die maps an every m Element <math>y\in N</math> aus.
+ |beweis=Let <math>g,h\in\text{Abb}(M,V)</math>. 
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=additivity
+ |beweisschritt=
+For alle <math>n\in N</math> we have that
+{{Formel|<math>\begin{align}
+\Theta(g+h)(n)&= \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } \Theta \right.} \\[0.3em]
+&=\  ((g+h)\circ t)(n) \\[0.3em]
+&=\  (g+h)(t(n)) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{vector addition in Abb}(M,V) \right.} \\[0.3em]
+&=\  g(t(n))+h(t(n)) \\[0.3em]
+&=\  (g\circ t)(n)+(h\circ t)(n) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } \Theta \right.} \\[0.3em]
+&=\  \Theta(g)(n)+\Theta(h)(n) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{vector addition in Abb}(N,V) \right.} \\[0.3em]
+&=\  (\Theta(g)+\Theta(h))(n)
+\end{align}</math>}}
+Damit haben wir <math>\Theta(g+h)=\Theta(g)+\Theta(h)</math> gezeigt, das heißt <math>\Theta</math> ist additiv.}}
+
+Let <math>g\in\text{Abb}(M,V)</math> and <math>\lambda\in K</math>.
+
+{{:Mathe für Nicht-Freaks: Vorlage:Beweisschritt
+ |ziel=homogeneity
+ |beweisschritt=
+For alle <math>n\in N</math> we have that
+{{Formel|<math>\begin{align}
+\Theta(\lambda\cdot g)(n)&= \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } \Theta \right.} \\[0.3em]
+&=\ ((\lambda\cdot g)\circ t)(n) \\[0.3em]
+&=\ (\lambda\cdot g)(t(n)) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{scalar multiplication in Abb}(M,V) \right.} \\[0.3em]
+&=\ \lambda\cdot g(t(n)) \\[0.3em]
+&=\ \lambda\cdot(g\circ t)(n) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{Definition of } \Theta \right.} \\[0.3em]
+&=\ \lambda\cdot\Theta(g)(n) \\[0.3em]
+& {\color{OliveGreen}\left\downarrow\  \text{scalar multiplication in Abb}(N,V) \right.} \\[0.3em]
+&=\ (\lambda\cdot\Theta(g))(n)
+\end{align}</math>}}
+Damit haben wir <math>\Theta(\lambda\cdot g)=\lambda\cdot\Theta(g)</math> gezeigt, was bedeutet <math>\Theta</math> ist homogen.}}
+
+Die additivity and homogeneity of <math>\Theta</math> bedeutet aber, dass <math>\Theta</math> eine linear map ist.
+}}
+
+{{#invoke:Mathe für Nicht-Freaks/Seite|unten}}
